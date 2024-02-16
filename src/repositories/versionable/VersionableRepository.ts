@@ -45,7 +45,7 @@ export default class VersionableRepository<
   }
 
   async softDelete(id: string) {
-    const query = { originalId: id, deleteAt: undefined };
+    const query = { originalId: id, deletedAt: undefined };
     const update = { deletedAt: Date.now() };
     const updates = this.model.findOneAndUpdate(query, update).lean();
     
