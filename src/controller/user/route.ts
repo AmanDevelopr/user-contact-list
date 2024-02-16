@@ -91,6 +91,7 @@ router
   .get(
     '/',
     authMiddleWare(),
+    validationHandler(validation.get) as any,
     userController.get
   )
 /**
@@ -134,6 +135,7 @@ router
   .post(
     '/',
     authMiddleWare(),
+    validationHandler(validation.post) as any,
     userController.create
   )
 
@@ -180,7 +182,7 @@ router
   .put(
     '/',
     authMiddleWare(),
-    // validationHandler(validation.Update),
+    validationHandler(validation.Update)as any,
     userController.update
   )
 
@@ -206,7 +208,7 @@ router
   .delete(
     '/:id',
     authMiddleWare(),
-    // validationHandler(validation.delete),
+    validationHandler(validation.delete)as any,
     userController.delete
   )
 
